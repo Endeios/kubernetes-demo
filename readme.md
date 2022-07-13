@@ -23,6 +23,11 @@ Some minimal apps for kubenetes demos, and presetatnion pointers
 5. Why kubernetes?
    - It is a vendor independent way of expressing “cloud application” so we do not get swamped with only one vendor, without being able to easily switch “cloud”
 
+6. What is a cloud application?
+   - It is an _orchestra_ of _linux containers_, running on a _for-rent infrastructure_ (with sla guarantees)
+
+
+Kubernetes is a container orchestrator
 
 
 
