@@ -15,16 +15,17 @@ Some minimal apps for kubenetes demos, and presetatnion pointers
 3. The CFO is happy when he has no fixed costs!
 
 
-4. Where is the cloud?
+4. What is a cloud application?
+   - It is an _orchestra_ of _services_, running on a _for-rent infrastructure_ (with sla guarantees)
+
+
+5. Where is the cloud?
    - There are multiple (three) cloud vendors, each one with some differentiation in price and services
    - They compete to offer services, and they try to vendor lock their users
    - A common “language to express cloud applications” has emerged, and that is kubernetes. (hero)
 
-5. Why kubernetes?
+6. Why kubernetes?
    - It is a vendor independent way of expressing “cloud application” so we do not get swamped with only one vendor, without being able to easily switch “cloud”
-
-6. What is a cloud application?
-   - It is an _orchestra_ of _linux containers_, running on a _for-rent infrastructure_ (with sla guarantees)
 
 
 Kubernetes is a container orchestrator
