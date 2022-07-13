@@ -8,3 +8,6 @@ Some minimal apps for kubenetes demos, and presetatnion pointers
    - No system downtimes
    - Pay per use rather than pay all the infrastructure upfront
 
+2. It is an easy to scale applications in the cloud
+   - Easily adapt to the number of users
+   - Easy to conduct experiments in a “minimally destructive way”
