@@ -15,3 +15,11 @@ Some minimal apps for kubenetes demos, and presetatnion pointers
 3. The CFO is happy when he has no fixed costs!
 
 
+4. Where is the cloud?
+   - There are multiple (three) cloud vendors, each one with some differentiation in price and services
+   - They compete to offer services, and they try to vendor lock their users
+   - A common “language to express cloud applications” has emerged, and that is kubernetes.
+
+
+
+
