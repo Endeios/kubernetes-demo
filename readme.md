@@ -78,7 +78,7 @@ Kubernetes is a container orchestrator
 
 2. Kubernetes "RULEZ"
    - The name comes from the Greek for “the guy that steers the ship”, where by ship we mean a group of containers
-   - I used to think it came from the “borg cube”, because it is the open source version of a Google’s software called “Borg”.
+   - I used to think it came from the “borg cube”, because it is the open source version of a Google's software called “Borg”.
    - It has the Origin of "Kubernator"
 
 3. Has APIs
@@ -91,6 +91,7 @@ Kubernetes is a container orchestrator
       - **Kubelet:** prepares the field for pods to run
       - **Container** engine: runs the pods, the way kubelet tells it 
       - **Kube-proxy:** keeps the host network configuration aligned with kubernetes
+   - The resources of the (worker) nodes get "SUMMED"
 
 4. Kubernetes Mini-summary
    - Runs a bit differently in the two types of nodes, but with the intent of “summing” the capabilities of the nodes
