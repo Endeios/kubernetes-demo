@@ -1,12 +1,22 @@
 # kubernetes demo
 Some minimal apps for kubenetes demos, and presetatnion pointers
 
+## Intro
+
+In order to explain you why kubernetes, I need to refresh you some knowledge about the cloud.
+Kubernetes is the tool we choosed to go to the cloud
+I will introduce you the contaiers because it is essential to understand what k8s really is. This will change the way you think about the cloud. I tis the real secret under tit all.
+Then I will tell you about the basic bulding blocks of k8s, so that you can look at a k8s panel and know what is going on.
+
 ## Part 1 - the cloud
 
 1. It is a cheap way of running your applications on the public internet
    - No hardware hassle
    - No system downtimes
    - Pay per use rather than pay all the infrastructure upfront
+     - Flexibility
+     - Upfront investment / long term short term
+     - Viable cost
 
 2. It is an easy to scale applications in the cloud
    - Easily adapt to the number of users
