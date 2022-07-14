@@ -33,8 +33,22 @@ Kubernetes is a container orchestrator
 ## Part 2 - Containers
 1. In order to see and access the physical resources, a process has to go through the kernel
    - What would happen if the kernel would offer differnt levels of reality?
-   - Alywasy been in kernel, from the chroot
+   - Always been in kernel, from the chroot
+   - A process, normally run by a Linux kernel, that sees the world in a “particular way”
+
+2. Namespaces
+   - The name points at something different inside a context
+   - There are some functionalities that the kernel can “restrict” from a process. Such functionalities are said to have “namespaces”
+   - A namespaced functionality is like a “artificially restricted” view on the full resource
+
 3. Namespaces as level of isolation between processes
    - The kernel "lies to process" by offering a partial view of the world
    - For security reasons, so that the processes can be segregated, and their interaction and rights can be kept in check
+   - All the containers, still run on the same machine, but they do not see each other
 
+4. What is a Linux Container
+   - A process, normally run by a Linux kernel, that sees the world in a “particular way”
+   - All the containers, still run on the same machine, but they do not see each other
+   - They all share the same OS, so they are much cheaper to run than a full virtualization
+   - There are some functionalities that the kernel can “restrict” from a process. Such functionalities are said to have “namespaces”
+   - A namespaced functionality is like a “artificially restricted” view on the full resource
