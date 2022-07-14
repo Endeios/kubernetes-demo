@@ -32,6 +32,9 @@ Kubernetes is a container orchestrator
 
 ## Part 2 - Containers
 1. In order to see and access the physical resources, a process has to go through the kernel
-2. Namespaces as level of isolation between processes
+   - What would happen if the kernel would offer differnt levels of reality?
+   - Alywasy been in kernel, from the chroot
+3. Namespaces as level of isolation between processes
    - The kernel "lies to process" by offering a partial view of the world
+   - For security reasons, so that the processes can be segregated, and their interaction and rights can be kept in check
 
