@@ -30,6 +30,6 @@ Some minimal apps for kubenetes demos, and presetatnion pointers
 
 Kubernetes is a container orchestrator
 
-
-
+## Part 2 - Containers
+1. In order to see and access the physical resources, a process has to go through the kernel
 
