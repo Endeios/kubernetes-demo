@@ -32,4 +32,6 @@ Kubernetes is a container orchestrator
 
 ## Part 2 - Containers
 1. In order to see and access the physical resources, a process has to go through the kernel
+2. Namespaces as level of isolation between processes
+   - The kernel "lies to process" by offering a partial view of the world
 
