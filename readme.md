@@ -1,5 +1,6 @@
 # kubernetes demo
 Some minimal apps for kubenetes demos, and presetatnion pointers
+One could use [https://rancherdesktop.io/](https://rancherdesktop.io/) to operate the examples contained in the demo.
 
 ## Intro
 
