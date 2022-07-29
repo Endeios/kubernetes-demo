@@ -15,6 +15,10 @@
 	<description>Simple web app from a pod</description>
 	<properties>
 		<java.version>11</java.version>
+		<jkube-k8s.version>1.8.0</jkube-k8s.version>
+		<postgresql.version>42.3.6</postgresql.version>
+		<docker.ports.file>${project.build.directory}\docker.properties</docker.ports.file>
+		<fabric8-docker.version>0.40.1</fabric8-docker.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -32,7 +36,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>42.3.6</version>
+			<version>${postgresql.version}</version>
 		</dependency>
 
 		<dependency>
@@ -43,10 +47,83 @@
 	</dependencies>
 
 	<build>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jkube</groupId>
+				<artifactId>kubernetes-maven-plugin</artifactId>
+				<version>${jkube-k8s.version}</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<!-- use only @ to avoid clashing with logback variable substitution -->
+					<useDefaultDelimiters>false</useDefaultDelimiters>
+					<delimiters>
+						<delimiter>@</delimiter>
+					</delimiters>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>${fabric8-docker.version}</version>
+				<executions>
+					<execution>
+						<id>start-docker-containers-for-integration</id>
+						<phase>pre-integration-test</phase> <!--when to start-->
+						<goals> <!-- what to start -->
+							<goal>build</goal>
+							<goal>start</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>stop-docker-containers-for-integration</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<portPropertyFile>${docker.ports.file}</portPropertyFile>
+					<autoCreateCustomNetworks>true</autoCreateCustomNetworks>
+					<startParallel>true</startParallel>
+					<verbose>true</verbose>
+					<images>
+						<image>
+							<alias>postgres</alias>
+							<name>postgres:14-alpine</name>
+							<run>
+								<network>
+									<mode>custom</mode>
+									<name>test-network</name>
+									<alias>postgres</alias>
+								</network>
+								<ports>
+									<port>+postgres.host:postgres.port:5432</port>
+								</ports>
+								<wait>
+									<log>PostgreSQL init process complete; ready for start up.</log>
+									<time>30000</time>
+								</wait>
+								<env>
+									<POSTGRES_USER>postgres</POSTGRES_USER><!-- creates also database named test-->
+									<POSTGRES_PASSWORD>postgres</POSTGRES_PASSWORD>
+								</env>
+							</run>
+						</image>
+					</images>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
