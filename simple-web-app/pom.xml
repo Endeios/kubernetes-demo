@@ -74,6 +74,24 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<executions>
+					<execution>
+						<configuration>
+							<includes>
+								<include>**/*IT.java</include>
+							</includes>
+						</configuration>
+						<phase>
+							integration-test
+						</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>${fabric8-docker.version}</version>
@@ -82,7 +100,7 @@
 						<id>start-docker-containers-for-integration</id>
 						<phase>pre-integration-test</phase> <!--when to start-->
 						<goals> <!-- what to start -->
-							<goal>build</goal>
+							<!--goal>build</goal-->
 							<goal>start</goal>
 						</goals>
 					</execution>

@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextHierarchy;
 @SpringBootTest()
 @ActiveProfiles("integration-tests")
 @ContextHierarchy(@ContextConfiguration(classes = {ITConfiguration.class}))
-class SimpleWebAppApplicationTests {
+class SimpleWebAppApplicationIT {
 
     @Test
     void contextLoads() {
